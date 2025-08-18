@@ -1,0 +1,16 @@
+{
+    "name": "Tell me",
+    "icons": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    },
+    "description": "An extension which accesses the YouTube transcript and provides a QA capability.",
+    "version": "1.0",
+    "permissions": ["tabs"],
+    "manifest_version": 3,
+    "action": {
+      "default_popup": "tell_me.html",
+      "default_icon": "icon.png"
+    }
+  }

@@ -16,11 +16,6 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_openai import OpenAIEmbeddings, ChatOpenAI
 from langchain_community.vectorstores import FAISS
 from langchain_core.prompts import PromptTemplate
-from langchain_core.runnables import RunnableParallel, RunnablePassthrough, RunnableLambda
-from langchain_core.output_parsers import StrOutputParser
-from pyngrok import ngrok
-import subprocess
-import time
 
 def get_transcript_text(video_id: str) -> str:
     """
@@ -65,6 +60,7 @@ def get_transcript_text(video_id: str) -> str:
     return ""
 
 # ========== Build Retriever ==========
+
 def build_retriever(video_id):
     transcript = get_transcript_text(video_id)
     if not transcript.strip():
@@ -119,7 +115,7 @@ if video_id:
 
                 # Use the prompt to generate an answer
                 llm = ChatOpenAI(model="gpt-3.5-turbo", openai_api_key=OPENAI_API_KEY)
-                answer = llm.generate(prompt.format(context=context, question=question))
+                answer = llm.invoke(prompt.format(context=context, question=question)).content
 
             st.subheader("Answer")
             st.write(answer)

@@ -1,0 +1,31 @@
+<html>
+
+<head>
+    <title>Tell Me Extension</title>
+    <script src="popup.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="icon.png" type="image/png">
+</head>
+<body>
+    <h1>Tell Me!</h1>
+    <p> A simple extension that accesses the YouTube transcript and provides a QA capability.</p>
+    <caption>By Shubhi</caption>
+    <!-- Visible only when youtube link is active -->
+    <img id="thumbnail" class="youtube" src="" alt="Video Thumbnail" style="width: 100%; display: none;">
+
+
+
+    <div class="chatbot-container youtube" style="display: none;" id="chatbotContainer">
+        <div id="responseBox">
+            <!-- Chatbot content will go here -->
+        </div>
+        <input type="text" id="userInput" placeholder="Type your question here..." style="width: 100%; padding: 10px; box-sizing: border-box;">
+        <!-- async function getAnswer(question)  -->
+        <button 
+        id="sendButton" style="width: 100%; padding: 10px; box-sizing: border-box;">Send</button>
+    </div>
+</body>
+
+</html>
