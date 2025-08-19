@@ -39,7 +39,7 @@ Create a virtual environment and install the required Python packages:
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
-pip install -r requirements.txt)
+pip install -r requirements.txt
 ```
 
 ### 3. Set Up Environment Variables
@@ -66,8 +66,6 @@ This starts the Streamlit app on http://localhost:8501.
 
 ## Features
 - Streamlit App: Enter a YouTube video ID, view the transcript, and ask questions about the video.
-FastAPI Backend: Provides endpoints for fetching transcripts and answering questions.
-Chrome Extension: Extracts YouTube video IDs from active tabs and allows Q&A directly from the browser.
 
 - FastAPI Backend: Provides endpoints for fetching transcripts and answering questions.
 
