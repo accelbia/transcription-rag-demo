@@ -1,0 +1,78 @@
+# YouTube Video Transcriber and Q&A
+
+This project provides a tool to fetch YouTube video transcripts, build a retriever for Q&A, and interact with the transcript via a Streamlit app, FastAPI backend, and a Chrome extension.
+
+---
+
+## Directory Structure
+
+```bash
+.
+├── api
+│   └── app.py
+├── app
+│   └── app.py
+├── extension
+│   ├── icon.png
+│   ├── manifest.json
+│   ├── popup.js
+│   ├── styles.css
+│   └── tell_me.html
+├── .env
+├── makefile
+├── README
+└── requirements.txt
+```
+
+---
+
+## Setup Instructions
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/accelbia/transcription-rag-demo
+cd transcription-rag-demo
+```
+### 2. Install Dependencies
+Create a virtual environment and install the required Python packages:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt)
+```
+
+### 3. Set Up Environment Variables
+Create a .env file in the root directory and add the following:
+```bash
+OPENAI_API_KEY=<your_openai_api_key>
+```
+
+## Running the Project
+### Using Makefile Commands
+The project includes a makefile for easy execution of different components:
+
+#### 1. Run the FastAPI Backend:
+```bash
+make run-api
+```
+This starts the API server on http://localhost:8000. Access the documentation at http://localhost:8000/docs.
+
+#### 2. Run the Streamlit App:
+```bash
+make run-streamlit
+```
+This starts the Streamlit app on http://localhost:8501.
+
+## Features
+- Streamlit App: Enter a YouTube video ID, view the transcript, and ask questions about the video.
+FastAPI Backend: Provides endpoints for fetching transcripts and answering questions.
+Chrome Extension: Extracts YouTube video IDs from active tabs and allows Q&A directly from the browser.
+
+- FastAPI Backend: Provides endpoints for fetching transcripts and answering questions.
+
+- Chrome Extension: Extracts YouTube video IDs from active tabs and allows Q&A directly from the browser.
+
+## Notes
+Ensure the .env file is not committed to version control (already included in .gitignore).
+The Chrome extension requires enabling developer mode in Chrome to load it.
